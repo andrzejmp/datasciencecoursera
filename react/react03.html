@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React Labo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="https://fb.me/react-0.13.2.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	
+	<script type="text/jsx">
+		//---------- one-way data flow ----------
+		var TinyForm = React.createClass({
+
+		getInitialState: function () {
+			return {
+				what: ''
+			};
+		},
+
+		handleChange: function (e) {
+			this.setState({what: e.target.value})	
+		},
+		
+		render: function() {
+			return <div>
+				<input type="text" onChange={this.handleChange} />
+				<h1>React is better than {this.state.what} </h1>
+			</div>
+			}
+		});
+
+		React.render(<TinyForm  />, document.body);		
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

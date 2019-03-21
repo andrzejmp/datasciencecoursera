@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React Labo</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+
+	<script src="https://fb.me/react-0.13.2.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	
+	<script type="text/jsx">
+		//component states
+		var ReactLabo = React.createClass({
+			getInitialState: function(){
+				return {timesClicked: 0}
+			},
+
+			handleClick: function() {
+			this.setState({
+				timesClicked: this.state.timesClicked + 1
+			  });
+
+			},
+		
+			render: function() {
+				return <h1 onClick={this.handleClick}>{this.state.timesClicked}</h1>; 
+				}
+			});
+
+		React.render(<ReactLabo  />, document.getElementById("one"));
+
+						
+	</script>
+
+		
+
+
+</head>
+<body>
+	
+</body>
+	<div id="one"></div>
+	<div id="two"></div>
+	<div id="three"></div>
+</html>

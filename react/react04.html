@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React Labo</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+
+	<script src="https://fb.me/react-0.13.2.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	
+	<script type="text/jsx">
+		//props to pass data
+		var ReactLabo = React.createClass({
+
+		getDefaultProps: function () {
+			return {
+				todo: "Discard",
+				product: "Angular"
+			}
+		},
+		
+		render: function() {
+			return <h1>{this.props.todo} {this.props.product}</h1> 
+			}
+		});
+
+		React.render(<ReactLabo todo="Drop" product="Angular" />, document.getElementById("one"));
+
+		React.render(<ReactLabo product="Vue" />, document.getElementById("two"));						
+
+		React.render(<ReactLabo  />, document.getElementById("three"));						
+	</script>
+
+		
+
+
+</head>
+<body>
+	
+</body>
+	<div id="one"></div>
+	<div id="two"></div>
+	<div id="three"></div>
+</html>
